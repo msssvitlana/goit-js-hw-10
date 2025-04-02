@@ -15,4 +15,205 @@
 @import url('./vite-promo.css');
 @import url('./badges.css');
 @import url('./back-link.css');
-@import url('./footer.css');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+
+  color: #434455;
+  background-color: #fff;
+}
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.main-title-gradient {
+  font-size: 45px;
+}
+.container {
+  margin-bottom: 40px;
+}
+.btn-start {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 75px;
+  height: 40px;
+  background-color: #4e75ff;
+  font: 500 16px / 1.5 var(--font-family);
+  letter-spacing: 0.04em;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.btn-start:hover,
+.btn-start:focus {
+  background-color: #6c8cff;
+}
+#datetime-picker {
+  width: 272px;
+  height: 40px;
+  margin-bottom: 32px;
+  gap: 8px;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  padding-left: 8px;
+  font-size: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+#datetime-picker:hover {
+  border-color: #0d0d0d;
+}
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 24px;
+}
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0px;
+  color: #2e2f42;
+  text-align: center;
+}
+
+span.value {
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 0.04em;
+}
+span.label {
+  font-size: 16px;
+  line-height: 24px;
+}
+/* 2 завдання */
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.delay-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.delay-input input[type='number'] {
+  width: 359px;
+  height: 39px;
+  padding: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.label-text {
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+}
+
+fieldset {
+  border: 2px solid #ccc;
+
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  width: 360px;
+  height: 78px;
+
+  margin-bottom: 24px;
+}
+
+legend {
+  font: 400 16px / 1.5 var(--font-family);
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  text-align: start;
+  margin-bottom: 10px;
+}
+
+/* Стилізація для лейблів */
+fieldset label {
+  display: inline-block;
+  font-size: 16px;
+  color: #555; /* Темно-сірий текст */
+  margin-bottom: 8px;
+  margin-right: 20px; /* Відступ між лейблами */
+}
+
+/* Стилізація для радіо-кнопок */
+input[type='radio'] {
+  margin-right: 8px; /* Відступ між кнопкою і текстом */
+  cursor: pointer; /* Змінює курсор на вказівний */
+}
+
+/* Стилізація при ховері на лейблах */
+label:hover {
+  color: #0078d4; /* Синій колір тексту при наведенні */
+  cursor: pointer; /* Курсор як вказівний при наведенні */
+}
+
+/* Стилізація для вибраного елемента */
+input[type='radio']:checked + span {
+  font-weight: bold;
+  color: #0078d4;
+}
+.btn-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 360px;
+  height: 40px;
+  background-color: #4e75ff;
+  border: none;
+  font: 500 16px / 1.5 var(--font-family);
+  letter-spacing: 0.04em;
+  color: #fff;
+  transition: background-color 0.6s ease;
+}
+.btn-form:hover {
+  background-color: #6c8cff;
+}
