@@ -5,9 +5,11 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const startButton = document.querySelector('.btn-start');
-const timerFace = document.querySelector('.timer');
 const datePicker = document.querySelector('#datetime-picker');
 let userSelectedDate;
+
+// Початкове вимкнення кнопки старту
+startButton.disabled = true;
 
 flatpickr(datePicker, {
   enableTime: true,
@@ -41,13 +43,14 @@ class Timer {
   }
 
   start() {
-    if (this.isActive || !userSelectedDate) {
-      // Якщо дата не вибрана або таймер вже активний, не запускати
-
+    if (this.isActive) {
+      // Якщо таймер вже активний, не запускати
       startButton.disabled = true;
+      datePicker.disabled = true;
+
       iziToast.warning({
-        title: 'No date selected',
-        message: 'Please select a valid future date before starting the timer.',
+        title: 'Timer has already been active',
+        message: 'Wait please!',
         position: 'center',
       });
       return;
@@ -58,12 +61,16 @@ class Timer {
     this.intervalId = setInterval(() => {
       const currentTime = Date.now();
       const deltaTime = userSelectedDate - currentTime;
+
       if (deltaTime <= 0) {
         clearInterval(this.intervalId); // Зупинка таймера, коли час вичерпано
         this.onTick({ days: '00', hours: '00', minutes: '00', seconds: '00' });
         this.isActive = false;
+
+        // Після завершення таймера
         datePicker.disabled = false;
-        startButton.disabled = true;
+        startButton.disabled = true; // Залишаємо кнопку неактивною
+
         iziToast.success({
           title: 'Time is up!',
           message: 'The countdown has finished.',
@@ -106,5 +113,8 @@ const time = new Timer({
 startButton.addEventListener('click', time.start.bind(time));
 
 function updateTimer({ days, hours, minutes, seconds }) {
-  timerFace.textContent = `${days}:${hours}:${minutes}:${seconds}`;
+  document.querySelector('[data-days]').textContent = days;
+  document.querySelector('[data-hours]').textContent = hours;
+  document.querySelector('[data-minutes]').textContent = minutes;
+  document.querySelector('[data-seconds]').textContent = seconds;
 }
