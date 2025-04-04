@@ -81,6 +81,11 @@ img {
 .btn-start:focus {
   background-color: #6c8cff;
 }
+.btn-start:disabled {
+  background-color: #cfcfcf;
+  cursor: not-allowed;
+  color: #989898;
+}
 #datetime-picker {
   width: 272px;
   height: 40px;
@@ -97,6 +102,12 @@ img {
 }
 #datetime-picker:hover {
   border-color: #0d0d0d;
+}
+#datetime-picker:disabled {
+  background-color: #808080;
+}
+#datetime-picker:focus {
+  border-color: #4e75ff;
 }
 .timer {
   display: flex;
