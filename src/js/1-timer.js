@@ -55,6 +55,9 @@ class Timer {
       });
       return;
     }
+    // Отключаем кнопку сразу при старте таймера
+    startButton.disabled = true;
+    datePicker.disabled = true;
 
     this.isActive = true;
 
